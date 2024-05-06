@@ -16,6 +16,9 @@ void geeks::initFirebase()
     while (WiFi.status() != WL_CONNECTED){
         Serial.print(".");
         delay(300);
+        cnt+=1;
+        if(cnt==30)
+            esp_restart();
     }
     delay(5000);
     Serial.println("da ket noi duoc wifi");

@@ -28,6 +28,7 @@ private:
     int count = 0;
     bool signupOK = false;
     unsigned int thoigian_cho;
+    uint32_t cnt=0;
 
 
 public:
