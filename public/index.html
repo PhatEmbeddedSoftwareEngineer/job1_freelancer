@@ -3,7 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESP Firebase App</title>
+    <title>Badger Team</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+        .centered-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /*
+            height: 100vh; /* Điều này sẽ giúp căn giữa theo chiều dọc trên toàn bộ viewport */
+        }
+        .mom{
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .dad{
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .son
+        {
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .sister
+        {
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
@@ -31,8 +71,40 @@
 
 </head>
 <body>
-    <h1>ESP32 Firebase Web App Example</h1>
-    <p>Reading int: <span id="reading-int"></span></p>
-    <p>Reading float: <span id="reading-float"></span></p>
+    <div class="centered-content">
+        <h1>Hệ Thống Giám Sát Thiết Bị Báo Cháy Rừng</h1>
+    </div>
+    <div class="mom">
+        <strong>
+            <img src="https://cameraquoctung.com/camera_quoctung/upload/images/IMG_0573-707x707.jpg" alt="temperature and do am" style="width: 300px; height: auto;">
+
+            
+        </strong>
+        
+    </div>
+    <div class="dad">
+        <strong>
+            <p>Nhiệt Độ: <span id="reading-int"></span></p> 
+            <p>Độ Ẩm: <span id="reading-float"></span></p>
+        </strong>
+        
+    </div>
+
+    <div class="son">
+        <strong>
+            <p>Khí Gas: <span id="gas"></span></p>
+        </strong>
+        
+    </div>  
+
+    <div class="sister">
+        <strong>
+            <p>Khói: <span id="baokhoi"></span></p>
+        </strong>
+        
+    </div>  
+
+    
+    
 </body>
 </html>

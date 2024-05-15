@@ -34,7 +34,7 @@ private:
 public:
     void setThoiGianCho(int s);
     void initFirebase();
-    void runFirebase();
+    void runFirebase(float nhietdo,float doam,uint32_t gas, float khoi);
 
 };
 
