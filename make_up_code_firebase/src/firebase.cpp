@@ -4,6 +4,7 @@
 //Provide the RTDB payload printing info and other helper functions.
 #include "addons/RTDBHelper.h"
 #include "fcn_telegram.h"
+#include "bluetooth.h"
 
 geeks fire;
 void geeks::setThoiGianCho(int s)
@@ -13,7 +14,7 @@ void geeks::setThoiGianCho(int s)
 void geeks::initFirebase()
 {
     Serial.begin(115200);
-    WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
+    WiFi.begin(_bluetooth.ssid, _bluetooth.pass);
     Serial.print("Connecting to Wi-Fi");
     while (WiFi.status() != WL_CONNECTED){
         Serial.print(".");
@@ -22,11 +23,12 @@ void geeks::initFirebase()
         if(cnt==10)
             esp_restart();
     }
-
+    //flag=0;
+    
     /**
      * ham nay duoc them vao tu fcn_telegram de khoi tao tele
     */
-    tele.initTeleGram();
+    //tele.initTeleGram();
     
     //delay(5000);
     Serial.println("da ket noi duoc wifi");
@@ -58,7 +60,7 @@ void geeks::initFirebase()
     Firebase.reconnectWiFi(true);
 }
 
-void geeks::runFirebase(float nhietdo, float doam, uint32_t gas, float khoi)
+void geeks::runFirebase(float nhietdo, float doam, uint32_t gas, uint32_t khoi)
 {
     if (Firebase.ready() && signupOK && (millis() - sendDataPrevMillis > thoigian_cho || sendDataPrevMillis == 0))
     {
@@ -99,7 +101,7 @@ void geeks::runFirebase(float nhietdo, float doam, uint32_t gas, float khoi)
             esp_restart();
         }
 
-        if (Firebase.RTDB.setFloat(&fbdo, "test/baokhoi", khoi)){
+        if (Firebase.RTDB.setInt(&fbdo, "test/baokhoi", khoi)){
             Serial.println("PASSED");
             Serial.println("PATH: " + fbdo.dataPath());
             Serial.println("TYPE: " + fbdo.dataType());

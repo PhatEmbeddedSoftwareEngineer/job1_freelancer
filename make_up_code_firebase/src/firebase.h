@@ -5,8 +5,9 @@
 #include <Firebase_ESP_Client.h>
 
 
+
 // Insert your network credentials
-#define WIFI_SSID "Phat"
+#define WIFI_SSID "Phat1"
 #define WIFI_PASSWORD "0937875855"
 
 
@@ -34,7 +35,7 @@ private:
 public:
     void setThoiGianCho(int s);
     void initFirebase();
-    void runFirebase(float nhietdo,float doam,uint32_t gas, float khoi);
+    void runFirebase(float nhietdo,float doam,uint32_t gas, uint32_t khoi);
 
 };
 

@@ -3,23 +3,34 @@
 
 extern DHTesp dht;
 
-#define GPIO_Pin GPIO_NUM_15
+/**
+ * chan nay giao tiep voi cam bien dht 
+*/
+#define GPIO_Pin GPIO_NUM_13
 
 
 class sensor
 {
 private:
+    /**
+     * chan nay giao tiep voi cam bien khi gas
+    */
     const int gasPin = GPIO_NUM_34;
+    /***
+     * chan nay giao tiep voi cam bien khoi
+    */
+    const int khoiPin = GPIO_NUM_35;
+
 public:
     float humidity;
     float temperature;
     uint32_t gas;
-    float khoi;
+    uint32_t khoi;
 
     void getValue(float *khoi);
     /**
      * khoi tao dht22 sensor 
-    */
+    */  
 
     void initDHT();
 
@@ -34,6 +45,12 @@ public:
     */
 
     void getGasSensor(uint32_t *gas);
+
+    /**
+     * function nay dung de doc gia tri cua cam bien khoi 
+    */
+
+    void getKhoiSensor(uint32_t *khoi);
 
 };
 
